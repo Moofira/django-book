@@ -1,13 +1,22 @@
 {
-    "builds": [{
-        "src": "bookmyseats/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-    }],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "bookmyseats/wsgi.py"
-        }
-    ]
+  "builds": [
+    {
+      "src": "bookmyseats/wsgi.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb",
+        "runtime": "python3.9"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "bookmyseats/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "bookmyseats/wsgi.py"
+    }
+  ]
 }
