@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 import os
 import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -91,13 +92,19 @@ WSGI_APPLICATION = 'bookmyseats.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'USER': 'django_bookmyshow_3dri_user',
+        'PASSWORD': 'test@123',
+        'HOST': 'oregon-postgres.render.com',
+        'PORT': '5432',
     }
 }
-DATABASES['default'] = dj_database_url.config('postgresql://django_bookmyshow_3dri_user:mstPU2z731E1ypUKl0t49lzdnqIMICif@dpg-d2g3iaodl3ps73eqok90-a.oregon-postgres.render.com/django_bookmyshow_3dri')
+DATABASES = {
+    'default': dj_database_url.config(
+        default='postgresql://django_bookmyshow_3dri_user:mstPU2z731E1ypUKl0t49lzdnqIMICif@dpg-d2g3iaodl3ps73eqok90-@oregon-postgres.render.com/django_bookmyshow_3dri')
 
-
+}
 
 
 # Password validation
