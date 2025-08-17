@@ -1,21 +1,17 @@
 {
-  
-  "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput",
-  "outputDirectory": "."
-      "config": 
-        "maxLambdaSize": "50mb",
-        "runtime": "python3.9"
-      }
-    
-
-  "routes": [
+  "version": 2,
+  "builds": [
     {
-      "src": "/static/(.*)",
-      "dest": "bookmyseats/static/$1"
-    },
+      "src": "bookmyseats/manage.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": 
+  [
     {
       "src": "/(.*)",
-      "dest": "bookmyseats/wsgi.py"
+      "dest": "bookmyseats/manage.py"
     }
   ]
+}
 

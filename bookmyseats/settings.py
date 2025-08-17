@@ -103,7 +103,8 @@ DATABASES = {
 DATABASES = {
     'default': dj_database_url.config(
         default='postgresql://django_bookmyshow_3dri_user:mstPU2z731E1ypUKl0t49lzdnqIMICif@dpg-d2g3iaodl3ps73eqok90-@oregon-postgres.render.com/django_bookmyshow_3dri')
-
+        conn_max_age=600,
+        ssl_require=True
 }
 
 
