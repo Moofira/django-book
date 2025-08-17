@@ -90,21 +90,13 @@ WSGI_APPLICATION = 'bookmyseats.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'USER': 'django_bookmyshow_3dri_user',
-        'PASSWORD': 'mstPU2z731E1ypUKl0t49lzdnqIMICif,
-        'HOST': dpg-d2g3iaodl3ps73eqok90-a,
-        'PORT': '5432',
-    }
-}
+
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://django_bookmyshow_3dri_user:mstPU2z731E1ypUKl0t49lzdnqIMICif@dpg-d2g3iaodl3ps73eqok90-@oregon-postgres.render.com/django_bookmyshow_3dri')
+        default=config('postgresql://django_bookmyshow_3dri_user:mstPU2z731E1ypUKl0t49lzdnqIMICif@dpg-d2g3iaodl3ps73eqok90-@oregon-postgres.render.com/django_bookmyshow_3dri')
         conn_max_age=600,
         ssl_require=True
+    )
 }
 
 
