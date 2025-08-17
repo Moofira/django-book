@@ -95,8 +95,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': BASE_DIR / 'db.sqlite3',
         'USER': 'django_bookmyshow_3dri_user',
-        'PASSWORD': 'test@123',
-        'HOST': 'oregon-postgres.render.com',
+        'PASSWORD': 'mstPU2z731E1ypUKl0t49lzdnqIMICif,
+        'HOST': dpg-d2g3iaodl3ps73eqok90-a,
         'PORT': '5432',
     }
 }
