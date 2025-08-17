@@ -11,9 +11,10 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config
+
 import os
 import dj_database_url
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -93,7 +94,7 @@ WSGI_APPLICATION = 'bookmyseats.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=config('postgresql://django_bookmyshow_3dri_user:mstPU2z731E1ypUKl0t49lzdnqIMICif@dpg-d2g3iaodl3ps73eqok90-@oregon-postgres.render.com/django_bookmyshow_3dri')
+        default=config('postgresql://django_bookmyshow_3dri_user:mstPU2z731E1ypUKl0t49lzdnqIMICif@dpg-d2g3iaodl3ps73eqok90-@oregon-postgres.render.com/django_bookmyshow_3dri'),
         conn_max_age=600,
         ssl_require=True
     )
